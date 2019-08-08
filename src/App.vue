@@ -10,7 +10,7 @@
           <ul class="nav navbar-nav">
             <li><a href="#" @click.prevent="activeView='app-home'">Home</a></li>
             <li><a href="#" @click.prevent="activeView='app-about'">About</a></li>
-            <li><a href="#" @click.prevent="activeView='app-home'">Contact</a></li>
+            <li><a href="#" @click.prevent="activeView='app-contact'">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -18,7 +18,10 @@
 
     <div class="container">
       <div class="jumbotron">
-        <component :is="activeView"></component>
+        <keep-alive>
+          <component :is="activeView"></component>
+        </keep-alive>
+        
       </div>
     </div>
   </div>
